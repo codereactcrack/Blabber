@@ -7,14 +7,13 @@ import {useNavigate} from 'react-router-dom'
 const LoginGoogle = () => {
 
   const {setCurrentUser} = useContext(UserContext);
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
 
   async function googleLoginHandler(){
     try {
-      const user = await signInWithPopup(auth,provider);
-      setCurrentUser(user);
-      naviagte('/chat-room')
-      console.log(user);
+      const userAuth = await signInWithPopup(auth,provider);
+      setCurrentUser(userAuth.user);
+      navigate('/chat-room');
     } catch (error) {
      console.log(error.message); 
     }
