@@ -4,6 +4,7 @@ import { auth, gitProvider } from '../../../services/firebase';
 import UserContext from '../../../context/AuthContext/UserContext';
 import { signInWithPopup } from 'firebase/auth';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import './css/LoginGitHub.css'
 
 const LoginGitHub = () => {
   const {setCurrentUser} = useContext(UserContext);
@@ -19,8 +20,10 @@ const LoginGitHub = () => {
     }
   }
     return (
-        <div className='github-login-button'>
-            <button onClick={gitHubLoginHandler}><GitHubIcon/></button>
+        <div className='github-container'>
+            <button onClick={gitHubLoginHandler} className='github-button'>
+              <GitHubIcon className='github-icon'/>
+            </button>
         </div>
     )
 }

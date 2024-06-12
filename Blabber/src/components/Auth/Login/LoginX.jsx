@@ -4,6 +4,7 @@ import { auth, xProvider } from '../../../services/firebase';
 import UserContext from '../../../context/AuthContext/UserContext';
 import { signInWithPopup } from 'firebase/auth';
 import XIcon from '@mui/icons-material/X';
+import './css/LoginX.css'
 
 const LoginX = () => {
     const {setCurrentUser} = useContext(UserContext);
@@ -19,8 +20,10 @@ const LoginX = () => {
       }
     }
   return (
-    <div className='x-login-button'>
-        <button onClick={xLoginHandler}><XIcon/></button>
+    <div className='x-container'>
+        <button onClick={xLoginHandler} className='x-button'>
+          <XIcon className='x-icon'/>
+        </button>
     </div>
   )
 }

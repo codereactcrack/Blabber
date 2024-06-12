@@ -3,6 +3,7 @@ import './App.css';
 import LoginPage from './components/Auth/Login/LoginPage'
 import RegisterPage from './components/Auth/Register/RegisterPage'
 import ChatRoom from './components/Chat/ChatRoom';
+import Terms from './pages/Terms'
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
         <Route path='/' element ={<LoginPage />} />
         <Route path='/sign-up' element ={<RegisterPage />} />
         <Route path='/chat-room' element ={<ChatRoom />} />
+        <Route path='/terms' element ={<Terms/>} />
+        <Route path='/privacy' element ={<Terms/>} />
       </Route>
     )
   )
