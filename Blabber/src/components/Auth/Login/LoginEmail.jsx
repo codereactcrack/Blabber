@@ -31,7 +31,7 @@ const LoginEmail = () => {
             Password
               <input type='password' {...register("password",{ required: true})}  
                     placeholder='Password '/> 
-              {errors.password?.type === 'required' && <p role="alert">assword is required</p>}
+              {errors.password?.type === 'required' && <p role="alert">Password is required</p>}
         </label>
         <input type="submit" />
       </form>

@@ -6,7 +6,7 @@ const ChatRoom = () => {
   const {currentUser} = useContext(UserContext);
 
   return (
-    <div>ChatRoom : - {currentUser && currentUser.displayName}</div>
+    <div>ChatRoom : - {currentUser && currentUser.email}</div>
   )
 }
 
