@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateCurrentUser, updateProfile } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { auth } from '../../../services/firebase';
@@ -12,15 +12,18 @@ const RegisterPage = () => {
   const password = watch("password");
 
   const onSubmit = async (data) => {
-    const { email, password } = data;
+    const {firstName,lastName, email, password } = data;
+    const userName = firstName + ' '+lastName ;
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       setCurrentUser(userCredential.user);
+      updateProfile(auth.currentUser,{ displayName:userName })
       navigate('/chat-room');
     } catch (error) {
       console.error(error.message);
     }
   };
+
 
   return (
     <div className='register-container'>
