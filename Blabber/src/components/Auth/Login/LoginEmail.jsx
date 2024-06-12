@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../../../services/firebase'
 import { useNavigate } from 'react-router-dom';
+import LoginIcon from '@mui/icons-material/Login';
 
 const LoginEmail = () => {
   
@@ -35,7 +36,10 @@ const LoginEmail = () => {
                     placeholder='Password '/> 
               {errors.password?.type === 'required' && <p role="alert">Password is required</p>}
         </label>
-        <input type="submit" />
+        <div className='login-button'>
+          <input type="submit" value='Login'/>
+          <LoginIcon/>
+        </div>
       </form>
     </div>
   )

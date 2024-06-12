@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { auth, provider } from '../../../services/firebase'
 import UserContext from '../../../context/AuthContext/UserContext'
 import {useNavigate} from 'react-router-dom'
+import GoogleIcon from '@mui/icons-material/Google';
 
 const LoginGoogle = () => {
 
@@ -21,7 +22,7 @@ const LoginGoogle = () => {
 
   return (
     <div className='google-login-button'>
-      <button onClick={googleLoginHandler}>SIGN IN WITH GOOGLE</button>
+      <button onClick={googleLoginHandler}><GoogleIcon/></button>
     </div>
   )
 }

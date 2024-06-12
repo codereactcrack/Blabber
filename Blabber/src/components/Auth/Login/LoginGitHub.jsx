@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { auth, gitProvider } from '../../../services/firebase';
 import UserContext from '../../../context/AuthContext/UserContext';
 import { signInWithPopup } from 'firebase/auth';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const LoginGitHub = () => {
   const {setCurrentUser} = useContext(UserContext);
@@ -19,7 +20,7 @@ const LoginGitHub = () => {
   }
     return (
         <div className='github-login-button'>
-            <button onClick={gitHubLoginHandler}>SIGN IN WITH GITHUB</button>
+            <button onClick={gitHubLoginHandler}><GitHubIcon/></button>
         </div>
     )
 }

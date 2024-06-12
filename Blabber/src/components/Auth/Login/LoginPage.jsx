@@ -4,11 +4,15 @@ import LoginGoogle from '../Login/LoginGoogle'
 import LoginGitHub from '../Login/LoginGitHub'
 import { NavLink } from 'react-router-dom'
 import Banner from '../../../assets/images/Banner.png'
+import LoginX from './LoginX'
+import Banner1 from '../../../assets/images/banner1.avif'
 
 const LoginPage = () => {
   return (
     <div className='login-container'>
-      <div className='login-left-banner'></div>
+      <div className='login-left-banner'>
+        <img src={Banner1} />
+      </div>
       <div className='login-right-auth'>
         <div className='logo-heading'>
           <div className='logo'>
@@ -26,8 +30,9 @@ const LoginPage = () => {
         <div className='social-auth'>
           <LoginGoogle />
           <LoginGitHub />
+          <LoginX />
         </div>
-        <div className='toc'>
+        <div className='tos'>
           By creating account,you agree to our Terms of Service and Privacy Policy
         </div>
         <div className="register-user">
