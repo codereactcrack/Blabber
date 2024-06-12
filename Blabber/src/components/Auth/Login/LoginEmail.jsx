@@ -2,16 +2,18 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../../../services/firebase'
+import { useNavigate } from 'react-router-dom';
 
 const LoginEmail = () => {
   
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate();
 
   async function onSubmit(data){
     const {email,password} = data;
     try {
-      const emailAuth = await signInWithEmailAndPassword(auth,email,password);
-      console.log(emailAuth);
+      signInWithEmailAndPassword(auth,email,password);
+      navigate('/chat-room')
     } catch (error) {
       console.log(error.message);
     }
