@@ -16,7 +16,7 @@ function App() {
       <Route >
         <Route path='/' element ={<LoginPage />} />
         <Route path='/sign-up' element ={<RegisterPage />} />
-        {currentUser && <Route path='/chat-room' element ={<ChatRoom />} />}
+        {currentUser && currentUser.email && <Route path='/chat-room' element ={<ChatRoom />} />}
         <Route path='/terms' element ={<Terms/>} />
         <Route path='/privacy' element ={<Terms/>} />
         <Route path='*' element={<div>404! BAD GATEWAY</div>} />

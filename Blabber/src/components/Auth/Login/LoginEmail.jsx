@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../../services/firebase';
 import { useNavigate } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
 import './css/LoginEmail.css';
+import UserContext from '../../../context/AuthContext/UserContext';
 
 const LoginEmail = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
+  const {setCurrentUser} = useContext(UserContext);
 
   async function onSubmit(data) {
     const { email, password } = data;
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userInfo = await signInWithEmailAndPassword(auth, email, password);
+      setCurrentUser(userInfo.user);
       navigate('/chat-room');
     } catch (error) {
       alert(error.message)
