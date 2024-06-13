@@ -16,8 +16,8 @@ const RegisterPage = () => {
     const userName = firstName + ' '+lastName ;
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(auth.currentUser,{ displayName:userName })
       setCurrentUser(userCredential.user);
-      updateProfile(auth.currentUser,{ displayName:userName })
       navigate('/chat-room');
     } catch (error) {
       console.error(error.message);
