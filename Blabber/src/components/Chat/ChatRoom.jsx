@@ -1,12 +1,16 @@
-import React, { useContext } from 'react'
-import UserContext from '../../context/AuthContext/UserContext'
+import React from 'react'
+import { Outlet } from 'react-router-dom';
+import ChatHeader from './ChatHeader'
+import ChatSideBar from './ChatSideBar'
 
 const ChatRoom = () => {
 
-  const {currentUser} = useContext(UserContext);
-
   return (
-    <div>ChatRoom : - {currentUser && currentUser.displayName}</div>
+    <div className='chat-room-container'>
+      <ChatHeader />
+      <ChatSideBar />
+      <Outlet />
+    </div>
   )
 }
 

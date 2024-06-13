@@ -16,7 +16,10 @@ function App() {
       <Route >
         <Route path='/' element ={<LoginPage />} />
         <Route path='/sign-up' element ={<RegisterPage />} />
-        {currentUser && currentUser.email && <Route path='/chat-room' element ={<ChatRoom />} />}
+        {currentUser && currentUser.email &&
+          <Route path='/chat-room' element ={<ChatRoom />}> 
+            
+          </Route>}
         <Route path='/terms' element ={<Terms/>} />
         <Route path='/privacy' element ={<Terms/>} />
         <Route path='*' element={<div>404! BAD GATEWAY</div>} />
