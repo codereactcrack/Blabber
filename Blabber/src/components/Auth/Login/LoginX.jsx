@@ -16,6 +16,7 @@ const LoginX = () => {
         setCurrentUser(userAuth.user);
         navigate('/chat-room');
       } catch (error) {
+        alert(error.message)
        console.log(error.message,error); 
       }
     }

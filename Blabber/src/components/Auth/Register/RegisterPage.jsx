@@ -24,6 +24,7 @@ const RegisterPage = () => {
       setCurrentUser(userCredential.user);
       navigate('/chat-room');
     } catch (error) {
+      alert(error.message)
       console.error(error.message);
     }
   };
