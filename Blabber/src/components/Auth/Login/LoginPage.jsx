@@ -12,7 +12,7 @@ const LoginPage = () => {
   return (
     <div className='login-container'>
       <div className='login-left-banner'>
-        <img src={Banner1} alt='banner' className='banner-image' />
+        <img src={Banner1} alt='banner' />
       </div>
       <div className='login-right-auth'>
         <div className='logo-heading'>

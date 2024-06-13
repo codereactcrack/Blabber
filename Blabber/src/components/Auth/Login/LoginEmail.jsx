@@ -35,10 +35,10 @@ const LoginEmail = () => {
                  placeholder='Password' className='input-field' />
           {errors.password?.type === 'required' && <p role="alert" className='error-message'>Password is required</p>}
         </label>
-        <div className='login-button'>
-          <input type="submit" value='Login' className='submit-button' />
-          <LoginIcon className='login-icon' />
-        </div>
+        <button type="submit" className='login-button'>
+            LOGIN
+            <LoginIcon className='login-icon' />
+        </button>
       </form>
     </div>
   );

@@ -14,22 +14,14 @@
     background-color: #f5f5f5;
     transition: background-color 0.3s;
     overflow: hidden;
-    /* Ensures smooth transition */
     border-radius: 10px;
 }
-
-.banner-image {
+.login-left-banner img{
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
 }
-
-.login-left-banner:hover {
-    background-color: #e0e0e0;
-}
-
-.banner-image:hover {
+.login-left-banner img:hover{
     transform: scale(1.05);
 }
 
