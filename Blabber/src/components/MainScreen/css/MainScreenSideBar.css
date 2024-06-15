@@ -1,12 +1,12 @@
 /* Sidebar container */
 .mainScreen-sidebar-container {
-    width: 120px;
+    width: 45px;
     height: 100vh;
     background-color: #f8f9fa;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 7px;
     font-family: 'Arial', sans-serif;
     transition: background-color 0.3s;
   }
