@@ -6,6 +6,9 @@ import Terms from './pages/Terms'
 import { useContext } from 'react';
 import UserContext from './context/AuthContext/UserContext';
 import MainScreen from './components/MainScreen/MainScreen';
+import ChannelTemplate from './components/Channels/ChannelTemplate';
+import ChatTemplate from './components/Chats/ChatTemplate';
+import Profile from './components/Profile/Profile';
 
 function App() {
 
@@ -18,7 +21,9 @@ function App() {
         <Route path='/sign-up' element ={<RegisterPage />} />
         {currentUser && currentUser.email &&
           <Route path='/MainScreen' element ={<MainScreen />}> 
-            
+            <Route path='chat' element={<ChatTemplate />} />
+            <Route path='channels' element={<ChannelTemplate />} />
+            <Route path='profile' element={<Profile />} />
           </Route>}
         <Route path='/terms' element ={<Terms/>} />
         <Route path='/privacy' element ={<Terms/>} />
