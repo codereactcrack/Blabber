@@ -22,7 +22,7 @@ const RegisterPage = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(auth.currentUser,{ displayName:userName })
       setCurrentUser(userCredential.user);
-      navigate('/chat-room');
+      navigate('/MainScreen');
     } catch (error) {
       alert(error.message)
       console.error(error.message);

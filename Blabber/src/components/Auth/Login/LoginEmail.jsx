@@ -17,7 +17,7 @@ const LoginEmail = () => {
     try {
       const userInfo = await signInWithEmailAndPassword(auth, email, password);
       setCurrentUser(userInfo.user);
-      navigate('/chat-room');
+      navigate('/MainScreen');
     } catch (error) {
       alert(error.message)
     }

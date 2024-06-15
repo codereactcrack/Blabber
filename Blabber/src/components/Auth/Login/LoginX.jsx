@@ -14,7 +14,7 @@ const LoginX = () => {
       try {
         const userAuth = await signInWithPopup(auth,xProvider);
         setCurrentUser(userAuth.user);
-        navigate('/chat-room');
+        navigate('/MainScreen');
       } catch (error) {
         alert(error.message)
        console.log(error.message,error); 

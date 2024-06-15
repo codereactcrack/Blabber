@@ -15,7 +15,7 @@ const LoginGoogle = () => {
     try {
       const userAuth = await signInWithPopup(auth,provider);
       setCurrentUser(userAuth.user);
-      navigate('/chat-room');
+      navigate('/MainScreen');
     } catch (error) {
       alert(error.message)
      console.log(error.message); 

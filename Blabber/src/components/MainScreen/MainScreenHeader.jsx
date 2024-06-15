@@ -2,10 +2,10 @@ import React from 'react'
 import Logo from '../../assets/images/Logo.png'
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import  './css/ChatHeader.css'
+import  './css/MainScreenHeader.css'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const ChatHeader = () => {
+const MainScreenHeader = () => {
   return (
     <div className='chat-header'>
       <div className='chat-logo'>
@@ -26,4 +26,4 @@ const ChatHeader = () => {
   )
 }
 
-export default ChatHeader
+export default MainScreenHeader

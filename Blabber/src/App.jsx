@@ -2,10 +2,10 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import './App.css';
 import LoginPage from './components/Auth/Login/LoginPage'
 import RegisterPage from './components/Auth/Register/RegisterPage'
-import ChatRoom from './components/Chat/ChatRoom';
 import Terms from './pages/Terms'
 import { useContext } from 'react';
 import UserContext from './context/AuthContext/UserContext';
+import MainScreen from './components/MainScreen/MainScreen';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
         <Route path='/' element ={<LoginPage />} />
         <Route path='/sign-up' element ={<RegisterPage />} />
         {currentUser && currentUser.email &&
-          <Route path='/chat-room' element ={<ChatRoom />}> 
+          <Route path='/MainScreen' element ={<MainScreen />}> 
             
           </Route>}
         <Route path='/terms' element ={<Terms/>} />
