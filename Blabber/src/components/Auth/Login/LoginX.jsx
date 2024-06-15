@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { auth, xProvider } from '../../../services/firebase';
+import { auth, twitterProvider } from '../../../services/firebase';
 import UserContext from '../../../context/AuthContext/UserContext';
 import { signInWithPopup } from 'firebase/auth';
 import XIcon from '@mui/icons-material/X';
@@ -12,7 +12,7 @@ const LoginX = () => {
   
     async function xLoginHandler(){
       try {
-        const userAuth = await signInWithPopup(auth,xProvider);
+        const userAuth = await signInWithPopup(auth,twitterProvider);
         setCurrentUser(userAuth.user);
         navigate('/MainScreen');
       } catch (error) {

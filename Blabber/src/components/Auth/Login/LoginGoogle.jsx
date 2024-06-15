@@ -1,6 +1,6 @@
 import { signInWithPopup } from 'firebase/auth'
 import React, { useContext } from 'react'
-import { auth, provider } from '../../../services/firebase'
+import { auth, googleProvider } from '../../../services/firebase'
 import UserContext from '../../../context/AuthContext/UserContext'
 import {useNavigate} from 'react-router-dom'
 import GoogleIcon from '@mui/icons-material/Google';
@@ -13,7 +13,7 @@ const LoginGoogle = () => {
 
   async function googleLoginHandler(){
     try {
-      const userAuth = await signInWithPopup(auth,provider);
+      const userAuth = await signInWithPopup(auth,googleProvider);
       setCurrentUser(userAuth.user);
       navigate('/MainScreen');
     } catch (error) {

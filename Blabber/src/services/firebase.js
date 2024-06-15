@@ -1,19 +1,20 @@
 import { initializeApp } from "firebase/app";
-import {GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider, getAuth} from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, GithubAuthProvider, TwitterAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAuisnhNveQV7OVXLDO1h2iirro_ohwhbI",
-  authDomain: "blabber-2ebf9.firebaseapp.com",
-  projectId: "blabber-2ebf9",
-  storageBucket: "blabber-2ebf9.appspot.com",
-  messagingSenderId: "488295297723",
-  appId: "1:488295297723:web:0d8bb08f8fd88d9cb6ef9e"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
-const gitProvider = new GithubAuthProvider();
-const xProvider = new TwitterAuthProvider();
 
-export {auth,provider,gitProvider,xProvider}
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+
+export { auth, googleProvider, githubProvider, twitterProvider };

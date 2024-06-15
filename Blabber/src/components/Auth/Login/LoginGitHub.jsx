@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { auth, gitProvider } from '../../../services/firebase';
+import { auth, githubProvider } from '../../../services/firebase';
 import UserContext from '../../../context/AuthContext/UserContext';
 import { signInWithPopup } from 'firebase/auth';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -12,7 +12,7 @@ const LoginGitHub = () => {
 
   async function gitHubLoginHandler(){
     try {
-      const userAuth = await signInWithPopup(auth,gitProvider);
+      const userAuth = await signInWithPopup(auth,githubProvider);
       setCurrentUser(userAuth.user);
       navigate('/MainScreen');
     } catch (error) {
