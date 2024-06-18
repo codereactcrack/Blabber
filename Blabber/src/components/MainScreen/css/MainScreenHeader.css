@@ -66,19 +66,20 @@
     gap: 20px;
   }
   
-  .profile-icon {
+  .logout-icon {
     display: flex;
     align-items: center;
     cursor: pointer;
   }
   
-  .profile-icon svg {
+  .logout-icon svg {
     font-size: 32px;
     transition: transform 0.3s;
   }
   
-  .profile-icon svg:hover {
+  .logout-icon svg:hover {
     transform: scale(1.1);
+    color: red;
   }
   
   .notifications-icon {
