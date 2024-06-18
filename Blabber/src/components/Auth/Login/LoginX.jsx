@@ -5,6 +5,7 @@ import UserContext from '../../../context/AuthContext/UserContext';
 import { signInWithPopup } from 'firebase/auth';
 import XIcon from '@mui/icons-material/X';
 import './css/LoginX.css'
+import useAddUserDb from '../../../hooks/useAddUserDb'
 
 const LoginX = () => {
     const {setCurrentUser} = useContext(UserContext);
@@ -14,6 +15,7 @@ const LoginX = () => {
       try {
         const userAuth = await signInWithPopup(auth,twitterProvider);
         setCurrentUser(userAuth.user);
+        await useAddUserDb(userAuth)
         navigate('/MainScreen');
       } catch (error) {
         alert(error.message)

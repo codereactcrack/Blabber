@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
 import './css/LoginEmail.css';
 import UserContext from '../../../context/AuthContext/UserContext';
+import useAddUserDb from '../../../hooks/useAddUserDb';
 
 const LoginEmail = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -17,6 +18,8 @@ const LoginEmail = () => {
     try {
       const userInfo = await signInWithEmailAndPassword(auth, email, password);
       setCurrentUser(userInfo.user);
+      console.log(userInfo);
+      await useAddUserDb(userInfo);
       navigate('/MainScreen');
     } catch (error) {
       alert(error.message)

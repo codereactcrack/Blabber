@@ -5,6 +5,7 @@ import UserContext from '../../../context/AuthContext/UserContext';
 import { signInWithPopup } from 'firebase/auth';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import './css/LoginGitHub.css'
+import useAddUserDb from '../../../hooks/useAddUserDb';
 
 const LoginGitHub = () => {
   const {setCurrentUser} = useContext(UserContext);
@@ -14,6 +15,7 @@ const LoginGitHub = () => {
     try {
       const userAuth = await signInWithPopup(auth,githubProvider);
       setCurrentUser(userAuth.user);
+      await useAddUserDb(userAuth);
       navigate('/MainScreen');
     } catch (error) {
       alert(error.message)

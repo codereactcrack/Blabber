@@ -6,6 +6,8 @@ import {useNavigate} from 'react-router-dom'
 import GoogleIcon from '@mui/icons-material/Google';
 import './css/LoginGoogle.css'
 
+import useAddUserDb from '../../../hooks/useAddUserDb'
+
 const LoginGoogle = () => {
 
   const {setCurrentUser} = useContext(UserContext);
@@ -15,10 +17,11 @@ const LoginGoogle = () => {
     try {
       const userAuth = await signInWithPopup(auth,googleProvider);
       setCurrentUser(userAuth.user);
+      await useAddUserDb(userAuth);
       navigate('/MainScreen');
     } catch (error) {
       alert(error.message)
-     console.log(error.message); 
+      console.log(error.message); 
     }
   }
 
