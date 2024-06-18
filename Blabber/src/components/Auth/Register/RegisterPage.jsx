@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, updateCurrentUser, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, updateCurrentUser, updateProfile } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { auth } from '../../../services/firebase';
@@ -19,10 +19,12 @@ const RegisterPage = () => {
     const {firstName,lastName, email, password } = data;
     const userName = firstName + ' '+lastName ;
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(auth.currentUser,{ displayName:userName })
-      setCurrentUser(userCredential.user);
-      navigate('/MainScreen');
+      await sendEmailVerification(auth.currentUser);
+      alert('A verification email has been sent to your email address. Please verify your email before logging in.');
+      setCurrentUser(null); 
+      navigate('/');
     } catch (error) {
       alert(error.message)
       console.error(error.message);
