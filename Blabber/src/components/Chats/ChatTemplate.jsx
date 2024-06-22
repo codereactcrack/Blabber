@@ -1,7 +1,6 @@
 import React from 'react'
-import FriendsList from './FriendsList'
-import ChatBox from './ChatBox'
-import './css/ChatBox.css'                                                                                  
+import FriendsList from './friends/FriendsList'      
+import {Outlet} from 'react-router-dom'                                                                          
 
 const ChatTemplate = () => {
   return (
@@ -9,9 +8,7 @@ const ChatTemplate = () => {
       <div className='chatTemplate-sidebar'>
         <FriendsList />
       </div>
-      <div className='chatBox-container'>
-        <ChatBox />
-      </div>
+      <Outlet />
     </div>
   )
 }

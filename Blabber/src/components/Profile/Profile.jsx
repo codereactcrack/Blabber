@@ -18,6 +18,7 @@ const Profile = () => {
     await updateDoc(docRef, {
       friendsList: arrayUnion(...newFriends, id)
     });
+    alert('Friend Added')
   }
 
   return (
