@@ -8,6 +8,7 @@ import ChannelTemplate from './components/Channels/ChannelTemplate';
 import ChatTemplate from './components/Chats/ChatTemplate';
 import Profile from './components/Profile/Profile';
 import ProtectedRoute from './components/Auth/ProtectedRoute/ProtectedRoute';
+import Message from './components/Chats/message/Message';
 
 function App() {
 
@@ -18,7 +19,9 @@ function App() {
         <Route path='/sign-up' element ={<RegisterPage />} />
         <Route path='/app' element ={<ProtectedRoute element={<MainScreen />} /> }> 
             <Route index element={<Profile />} />
-            <Route path='chat' element={<ChatTemplate />} />
+            <Route path='chat' element={<ChatTemplate />} >
+              <Route path='dm/:friendId' element ={<Message />} />
+            </Route>
             <Route path='channels' element={<ChannelTemplate />} />
             <Route path='profile' element={<Profile />} />
         </Route>

@@ -4,11 +4,13 @@ import useFetchParticularUser from '../../../hooks/useFetchParticularUser';
 import useFetchUser from '../../../hooks/useFetchUser';
 
 import '../css/FriendsList.css';
+import { useNavigate } from 'react-router-dom';
 
 const FriendsList = () => {
   const { currentUser } = useContext(UserContext);
   const currentUserInfoArray = useFetchParticularUser(currentUser);
   const userList = useFetchUser();
+  const navigate = useNavigate();
 
   const [searchText, setSearchText] = useState('');
 
@@ -21,7 +23,6 @@ const FriendsList = () => {
 
   const filteredFriendList = userList.filter(user => friendsList.includes(user.id) && 
                             user.userName.toLowerCase().includes(searchText.toLowerCase()));
-
   return (
     <div className='friends-list-container'>
       <div className='search-friend'>
@@ -34,7 +35,7 @@ const FriendsList = () => {
         ) : (
           <ul>
             {filteredFriendList.map(friend => (
-              <li key={friend.id} className='friend-item'>
+              <li key={friend.id} className='friend-item' onClick={()=>navigate(`/app/chat/dm/${friend.id}`)}>
                 <img src={friend.profilePhoto} alt={friend.userName} className='friend-photo' />
                 <p className='friend-name'>{friend.userName}</p>
               </li>

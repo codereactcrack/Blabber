@@ -1,6 +1,7 @@
 import React from 'react'
 import FriendsList from './friends/FriendsList'      
 import {Outlet} from 'react-router-dom'                                                                          
+import './css/ChatTemplate.css'
 
 const ChatTemplate = () => {
   return (
