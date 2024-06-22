@@ -16,7 +16,7 @@ const LoginX = () => {
         const userAuth = await signInWithPopup(auth,twitterProvider);
         setCurrentUser(userAuth.user);
         await useAddUserDb(userAuth)
-        navigate('/MainScreen');
+        navigate('/app');
       } catch (error) {
         alert(error.message)
        console.log(error.message,error); 

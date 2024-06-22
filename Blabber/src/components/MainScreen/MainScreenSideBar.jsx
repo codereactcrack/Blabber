@@ -10,17 +10,17 @@ const MainScreenSideBar = () => {
     <div className='mainScreen-sidebar-container'>
       <ul className='mainScreen-sidebar-navigation'>
         <li className='mainScreen-navigation-item'>
-          <NavLink to='/MainScreen/chat' className={({ isActive }) => (isActive ? 'active' : '')}>
+          <NavLink to='/app/chat' className={({ isActive }) => (isActive ? 'active' : '')}>
             <ChatRoundedIcon />
           </NavLink>
         </li>
         <li className='mainScreen-navigation-item'>
-          <NavLink to='/MainScreen/channels' className={({ isActive }) => (isActive ? 'active' : '')}>
+          <NavLink to='/app/channels' className={({ isActive }) => (isActive ? 'active' : '')}>
             <Groups2RoundedIcon />
           </NavLink>
         </li>
         <li className='mainScreen-navigation-item'>
-          <NavLink to='/MainScreen/profile' className={({ isActive }) => (isActive ? 'active' : '')}>
+          <NavLink to='/app/profile' className={({ isActive }) => (isActive ? 'active' : '')}>
             <HomeRoundedIcon />
           </NavLink>
         </li>

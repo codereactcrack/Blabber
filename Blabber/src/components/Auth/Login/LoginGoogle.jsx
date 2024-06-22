@@ -18,7 +18,7 @@ const LoginGoogle = () => {
       const userAuth = await signInWithPopup(auth,googleProvider);
       setCurrentUser(userAuth.user);
       await useAddUserDb(userAuth);
-      navigate('/MainScreen');
+      navigate('/app');
     } catch (error) {
       alert(error.message)
       console.log(error.message); 

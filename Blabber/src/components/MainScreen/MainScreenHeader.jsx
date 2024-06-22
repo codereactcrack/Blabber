@@ -18,7 +18,7 @@ const MainScreenHeader = () => {
 
   return (
     <div className='chat-header'>
-      <div className='chat-logo'>
+      <div className='chat-logo' onClick={()=>navigate('/app')}>
         <img src={Logo} className='logo'/>
         <div className='logo-heading'>BLABBER</div>
       </div>

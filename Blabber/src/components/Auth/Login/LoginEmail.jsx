@@ -20,7 +20,7 @@ const LoginEmail = () => {
       setCurrentUser(userInfo.user);
       console.log(userInfo);
       await useAddUserDb(userInfo);
-      navigate('/MainScreen');
+      navigate('/app');
     } catch (error) {
       alert(error.message)
     }

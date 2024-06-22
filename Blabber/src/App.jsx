@@ -16,7 +16,8 @@ function App() {
       <Route >
         <Route path='/' element ={<LoginPage />} />
         <Route path='/sign-up' element ={<RegisterPage />} />
-        <Route path='/MainScreen' element ={<ProtectedRoute element={<MainScreen />} /> }> 
+        <Route path='/app' element ={<ProtectedRoute element={<MainScreen />} /> }> 
+            <Route index element={<Profile />} />
             <Route path='chat' element={<ChatTemplate />} />
             <Route path='channels' element={<ChannelTemplate />} />
             <Route path='profile' element={<Profile />} />
